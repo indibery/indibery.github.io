@@ -2,37 +2,163 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="refresh" content="3; url=/planroutine/" />
-  <link rel="canonical" href="https://indibery.github.io/planroutine/" />
-  <title>indibery.github.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://indibery.github.io/" />
+  <title>공직플랜 (PlanRoutine) — 초등 교사를 위한 업무 일정 관리 앱</title>
+  <meta name="description" content="공직플랜(PlanRoutine)은 초등 교사를 위한 iOS 업무 일정 관리 앱입니다. 작년 일정 CSV를 가져와 올해 일정을 빠르게 세팅하고, 원하는 일정을 Google 캘린더에 동기화할 수 있습니다." />
   <style>
+    :root {
+      --navy: #0e1a2b;
+      --gold: #d4a857;
+      --ink: #111;
+      --sub: #555;
+      --hint: #888;
+      --line: #e6e6e6;
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --link: #2962ff;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      max-width: 640px;
-      margin: 80px auto;
-      padding: 0 24px;
-      color: #111;
-      background: #f7f7f8;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Pretendard',
+        'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 24px;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
     }
-    h1 { font-size: 22px; margin-bottom: 8px; }
-    p { font-size: 15px; line-height: 1.6; color: #444; }
-    a { color: #2962ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .card {
-      background: #fff;
-      padding: 28px 32px;
+    header { margin-bottom: 32px; }
+    h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.3px; }
+    h1 .en { font-size: 18px; color: var(--sub); font-weight: 500; }
+    .tagline { color: var(--sub); margin: 0; font-size: 16px; }
+    section.card {
+      background: var(--card);
+      padding: 24px 28px;
       border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      margin-bottom: 20px;
     }
-    .footer { margin-top: 16px; font-size: 13px; color: #888; }
+    h2 { font-size: 18px; margin: 0 0 12px; color: var(--navy); }
+    p { margin: 0 0 12px; color: var(--ink); font-size: 15px; }
+    ul { margin: 8px 0 12px; padding-left: 22px; }
+    li { margin-bottom: 6px; font-size: 15px; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--sub);
+      background: #fafafa;
+    }
+    .cta {
+      display: inline-block;
+      padding: 10px 18px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .cta:hover { text-decoration: none; opacity: 0.92; }
+    footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+      color: var(--sub);
+      text-align: center;
+    }
+    footer .links { margin-bottom: 10px; }
+    footer .links a { margin: 0 10px; }
+    footer .copy { color: var(--hint); font-size: 13px; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>indibery's GitHub Pages</h1>
-    <p>This site hosts public pages for projects published by <strong>indibery</strong>.</p>
-    <p>Current project: <a href="/planroutine/"><strong>공직플랜 (PlanRoutine)</strong></a> — a schedule manager for Korean elementary school teachers.</p>
-    <p class="footer">You will be redirected to <a href="/planroutine/">/planroutine/</a> in a few seconds.</p>
-  </div>
+  <header>
+    <p class="links" style="margin:0 0 12px;font-size:13px;color:var(--hint);text-align:right;">
+      <a href="/planroutine/privacy_policy">개인정보처리방침</a>
+      &middot;
+      <a href="/planroutine/terms">서비스 약관</a>
+    </p>
+    <h1>공직플랜 <span class="en">(PlanRoutine)</span></h1>
+    <p class="tagline">초등 교사를 위한 iOS 업무 일정 관리 앱</p>
+  </header>
+
+  <section class="card">
+    <h2>앱 소개</h2>
+    <p>
+      <strong>공직플랜(PlanRoutine)</strong>은 한국 초등학교 교사를 대상으로 한
+      iOS 앱입니다. 매년 반복되는 학교 업무 사이클을 작년 데이터(생산문서등록대장
+      CSV)에서 가져와 올해 일정으로 빠르게 세팅하고, 일정을 검토·확정하면서
+      필요한 항목만 골라 Google 캘린더에 동기화할 수 있습니다.
+    </p>
+    <div class="pill-row">
+      <span class="pill">iOS only</span>
+      <span class="pill">한국어</span>
+      <span class="pill">교사 업무 사이클 특화</span>
+    </div>
+    <a class="cta" href="https://apps.apple.com/kr/app/공직플랜/id6761813798"
+       target="_blank" rel="noopener">App Store에서 보기</a>
+  </section>
+
+  <section class="card">
+    <h2>핵심 기능</h2>
+    <ul>
+      <li><strong>작년 CSV 가져오기</strong> — 생산문서등록대장 CSV에서
+        결재유형이 "생산"인 문서만 자동으로 골라 일정으로 변환합니다.</li>
+      <li><strong>일정 검토·확정</strong> — 슬라이드 한 번으로 확정/삭제. 카테고리별
+        필터로 학생학적·일과운영 등 분류만 보고 검토할 수 있습니다.</li>
+      <li><strong>자체 캘린더</strong> — 앱 내 캘린더에서 일정을 보고 직접 이벤트를
+        추가·완료 처리합니다.</li>
+      <li><strong>Google 캘린더 동기화 (단방향)</strong> — 사용자가 명시적으로
+        오른쪽 슬라이드한 개별 이벤트만 사용자 본인의 Google 캘린더에
+        <em>생성</em>합니다. 기존 일정을 읽거나 수정·삭제하지 않습니다.</li>
+      <li><strong>기기 캘린더 동기화</strong> — Apple/Android 시스템 캘린더로도
+        같은 방식으로 단방향 저장이 가능합니다.</li>
+      <li><strong>로컬 알림</strong> — 월초·1주 전·1일 전 08:00에 시스템 알림.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Google API 사용 안내</h2>
+    <p>
+      본 앱은 사용자가 동의한 경우에만 Google Calendar API의
+      <code>https://www.googleapis.com/auth/calendar.events</code> scope을
+      사용합니다. <strong>단방향 쓰기 전용</strong>이며, 사용자가 슬라이드 액션으로
+      승인한 단일 이벤트만 사용자 본인의 기본 캘린더에 생성·갱신합니다.
+      Google 캘린더의 기존 일정을 읽거나 수정·삭제하지 않습니다.
+    </p>
+    <p>
+      Google 사용자 데이터 처리에 대한 자세한 내용은
+      <a href="/planroutine/privacy_policy">개인정보처리방침</a>의 §5(개인정보
+      제3자 제공) 항목을 참고해 주세요. 본 앱은 Google API Services User Data
+      Policy의 Limited Use 요구사항을 준수합니다.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>개발자 / 문의</h2>
+    <p>
+      공직플랜은 1인 개발자가 운영하는 앱입니다. 문의는
+      <a href="mailto:bery97@gmail.com">bery97@gmail.com</a>으로 부탁드립니다.
+    </p>
+  </section>
+
+  <footer>
+    <div class="links">
+      <a href="/planroutine/privacy_policy">개인정보처리방침 (Privacy Policy)</a>
+      <a href="/planroutine/terms">서비스 약관 (Terms of Service)</a>
+      <a href="https://apps.apple.com/kr/app/공직플랜/id6761813798"
+         target="_blank" rel="noopener">App Store</a>
+    </div>
+    <div class="copy">© 2026 indibery (공직플랜 / PlanRoutine). All rights reserved.</div>
+  </footer>
 </body>
 </html>
